@@ -92,6 +92,6 @@ piter_moscow =Road(start=piter, end=moscow, distance=780)
 loader_1 = AutoLoader(model='Bobcat', bucket_capacity=1000, warehouse=moscow, kind='loader')
 loader_2 = AutoLoader(model='LongKing', bucket_capacity=500, warehouse=piter, kind='unloader')
 
-123_456
+123_456_789
 
 
