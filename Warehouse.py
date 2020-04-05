@@ -92,6 +92,4 @@ piter_moscow =Road(start=piter, end=moscow, distance=780)
 loader_1 = AutoLoader(model='Bobcat', bucket_capacity=1000, warehouse=moscow, kind='loader')
 loader_2 = AutoLoader(model='LongKing', bucket_capacity=500, warehouse=piter, kind='unloader')
 
-truck_1 = Truck(odel='Камаз', body_space=5000)
-truck_2 = Truck(model='Газ', body_space=2000)
 
