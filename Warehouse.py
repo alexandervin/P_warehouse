@@ -21,18 +21,20 @@ class Warehouse:
     def set_road_out(self):
         pass
 
+    def truck_arrived(self, truck):
+        pass
+
     def get_next_truck(self):
         pass
 
-    def track_ready(self):
+    def track_ready(self, truck):
         pass
 
-    def acr(self):
+    def act(self):
         pass
 
 
 class Vehicle:
-
     fuel_rate = 0
 
     def __init__(self, model):
@@ -81,17 +83,41 @@ class AutoLoader(Vehicle):
         pass
 
 
-TOTAL_CARGO = 1000
+TOTAL_CARGO = 100000
 
 moscow = Warehouse(name='Москва', content=TOTAL_CARGO)
 piter = Warehouse(name='Питер', content=0)
 
 moscow_piter = Road(start=moscow, end=piter, distance=715)
-piter_moscow =Road(start=piter, end=moscow, distance=780)
+piter_moscow = Road(start=piter, end=moscow, distance=780)
 
-loader_1 = AutoLoader(model='Bobcat', bucket_capacity=1000, warehouse=moscow, kind='loader')
-loader_2 = AutoLoader(model='LongKing', bucket_capacity=500, warehouse=piter, kind='unloader')
+moscow.set_road_out(moscow_piter)
+piter.set_road_out(piter_moscow)
 
-123_456_789
+loader_1 = AutoLoader(model='Bobcat', bucket_capacity=1000, warehouse=moscow, role='loader')
+loader_2 = AutoLoader(model='LongKing', bucket_capacity=500, warehouse=piter, role='unloader')
 
+truck_1 = Truck(model='Камаз', body_space=5000)
+truck_2 = Truck(model='Газ', body_space=2000)
 
+moscow.truck_arrived(truck_1)
+moscow.truck_arrived(truck_2)
+
+hour = 0
+
+#моделирующая часть
+while piter.content < TOTAL_CARGO:
+    hour += 1
+    cprint('----------------------------------Час {0}-----------------------'.format(hour), color='red')
+    truck_1.act()
+    truck_2.act()
+    loader_1.act()
+    loader_2.act()
+    moscow.act()
+    piter.act()
+    cprint(truck_1, color='cyan')
+    cprint(truck_2, color='cyan')
+    cprint(loader_1, color='cyan')
+    cprint(loader_2, color='cyan')
+    cprint(moscow, color='cyan')
+    cprint(piter, color='cyan')
