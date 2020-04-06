@@ -64,7 +64,7 @@ class Truck(Vehicle):
         return res + 'груза {}'.format(self.cargo)
 
     def ride(self):
-        pass
+        #TODO
 
     def go_to(self, road):
         self.place = road
