@@ -38,28 +38,38 @@ class Vehicle:
     fuel_rate = 0
 
     def __init__(self, model):
-        pass
+        self.model  = model
+        self.fuel = 0
 
     def __str__(self):
-        pass
+        return '{0} топлива {1}'.format(self.model, self.fuel)
 
     def tank_app(self):
-        pass
+        self.fuel += 1000
 
 
 class Truck(Vehicle):
 
     def __init__(self, model, body_space=1000):
-        pass
+        super().__init__(model=model)
+        self.body_cpace = body_space
+        self.cargo = 0
+        self.vilocity = 100
+        self.place = None
+        self.distance_to_target = 0
+
 
     def __str__(self):
-        pass
+        res = super().__str__()
+        return res + 'груза {}'.format(self.cargo)
 
     def ride(self):
         pass
 
     def go_to(self, road):
-        pass
+        self.place = road
+        self.distance_to_target = road.distance
+        print('{} выехал в путь'.format(self.model))
 
     def act(self):
         pass
@@ -121,4 +131,3 @@ while piter.content < TOTAL_CARGO:
     cprint(loader_2, color='cyan')
     cprint(moscow, color='cyan')
     cprint(piter, color='cyan')
-    #TODO
