@@ -121,3 +121,4 @@ while piter.content < TOTAL_CARGO:
     cprint(loader_2, color='cyan')
     cprint(moscow, color='cyan')
     cprint(piter, color='cyan')
+    #TODO
