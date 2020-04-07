@@ -79,7 +79,7 @@ class Truck(Vehicle):
             self. distance_to_target -= self.vilocity
             print('{0} едет по дороге, осталось {1}'.format(self.model, self.distance_to_target))
         else:
-            self.place = self.plase.end
+            self.place = self.place.end
             self.place.truck_arrived(self)
             print('{} доехал'.format(self.model))
 
