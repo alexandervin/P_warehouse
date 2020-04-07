@@ -27,6 +27,7 @@ class Warehouse:
 
     def truck_arrived(self, truck):
         self.queue_in.append(truck)
+        truck.place = self
         print('{} прибыл грузовик {}'.format(self.name, truck))
 
     def get_next_truck(self):
@@ -53,11 +54,11 @@ class Vehicle:
         self.fuel = 0
 
     def __str__(self):
-        return '{0} топлива {1}'.format(self.model, self.fuel)
+        return ' {0} топлива {1} '.format(self.model, self.fuel)
 
     def tank_app(self):
         self.fuel += 1000
-        return '{0} заправился '.format(self.model)
+        print(' {0} заправился '.format(self.model))
 
 
 class Truck(Vehicle):
@@ -72,15 +73,14 @@ class Truck(Vehicle):
 
     def __str__(self):
         res = super().__str__()
-        return res + 'груза {}'.format(self.cargo)
+        return res + 'груза {} '.format(self.cargo)
 
     def ride(self):
         if self.distance_to_target > self.vilocity:
             self. distance_to_target -= self.vilocity
             print('{0} едет по дороге, осталось {1}'.format(self.model, self.distance_to_target))
         else:
-            self.place = self.place.end
-            self.place.truck_arrived(self)
+            self.place.end.truck_arrived(self)
             print('{} доехал'.format(self.model))
 
     def go_to(self, road):
@@ -129,7 +129,6 @@ class AutoLoader(Vehicle):
         if self.truck.cargo == self.truck.body_cpace:
             self.warehouse.track_ready(self.truck)
             self.truck = None
-
 
     def unload(self):
         if self.truck.cargo >= self.bucket_capacity:
