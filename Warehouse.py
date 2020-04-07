@@ -64,7 +64,9 @@ class Truck(Vehicle):
         return res + 'груза {}'.format(self.cargo)
 
     def ride(self):
-        #TODO
+        if self.distance_to_target > self.vilocity:
+            self. distance_to_target -= self.vilocity
+        print('{0} едет по дороге, осталось {1}'.format(self.model, self.distance_to_target))
 
     def go_to(self, road):
         self.place = road
@@ -72,13 +74,19 @@ class Truck(Vehicle):
         print('{} выехал в путь'.format(self.model))
 
     def act(self):
-        pass
+        if self.fuel < 10:
+            self.tank_app()
+        elif isinstance(self.place, Road):
+            self.ride()
 
 
 class AutoLoader(Vehicle):
 
     def __init__(self, model, bucket_capacity=100, warehouse=None, role='loader'):
-        pass
+        super(AutoLoader, self).__init__(model=model)
+        self.bucket_capacity = bucket_capacity
+        self.warehouse = warehouse
+        self.role = role
 
     def __str__(self):
         pass
