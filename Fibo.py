@@ -16,3 +16,6 @@ def fibonnaci(n):
     return result
 
 print(fibonnaci(8))
+
+for value in fibonnaci(8):
+    print(value)
