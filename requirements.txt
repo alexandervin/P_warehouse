@@ -3,3 +3,4 @@ simple-draw==2.6.6
 termcolor==1.1.0
 style==1.1.0
 astrobox==0.1.2
+Pillow==7.1.1
