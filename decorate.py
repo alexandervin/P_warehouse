@@ -21,4 +21,4 @@ from pprint import pprint
 # print(x)
 # print(z)
 
-from PIL import Image
+#from PIL import Image
