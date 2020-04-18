@@ -1,3 +1,6 @@
+# Полиморфизм является еще одним базовым аспектом объектно-ориентированного программирования и предполагает
+# способность к изменению функционала, унаследованного от базового класса.
+
 class Person:
     def __init__(self, name, age):
         self.__name = name  # устанавливаем имя
@@ -45,8 +48,10 @@ class Student(Person):
         print("Студент", self.name, "учится в университете", self.university)
 
 
-people = [Person("Tom", 23), Student("Bob", 19, "Harvard"), Employee("Sam", 35, "Google")]
+people = [Person(name="Tom", age=34),
+          Student(name="Bob", age=19, university="Harvard"),
+          Employee(name="Sam", age=35, company="Google")]
 
-for person in people:
-    person.display_info()
+#for man in people:
+    man.display_info()
     print()
