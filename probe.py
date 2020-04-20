@@ -52,6 +52,6 @@ people = [Person(name="Tom", age=34),
           Student(name="Bob", age=19, university="Harvard"),
           Employee(name="Sam", age=35, company="Google")]
 
-#for man in people:
+for man in people:
     man.display_info()
     print()
