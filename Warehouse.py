@@ -50,7 +50,7 @@ class Vehicle:
     fuel_rate = 0
 
     def __init__(self, model):
-        self.model  = model
+        self.model = model
         self.fuel = 0
 
     def __str__(self):
