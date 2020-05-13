@@ -15,12 +15,12 @@ class SquareEquationSolverTestCase(TestCase):
             hasattr(solver, 'squere_equition_solver')
         )
 
-    def test_function_accepts_args(self):
-        from solver import squere_equition_solver
-        try:
-            squere_equition_solver(1, 70, 600)
-        except TypeError:
-            self.fail('Function must take 3 args')
+    # def test_function_accepts_args(self):
+    #     from solver import squere_equition_solver
+    #     try:
+    #         squere_equition_solver(1, 70, 600)
+    #     except TypeError:
+    #         self.fail('Function must take 3 args')
 
     def test_raises_on_invalid_argument_type(self):
         from solver import squere_equition_solver
