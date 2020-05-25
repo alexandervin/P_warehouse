@@ -6,3 +6,4 @@
 --psycpg2 (pip install psycopg2 -- for PostgreSQL)
 Pgpool-II(Запросы-приложение-балансировщик нагрузки-реплики БД-Главная БД)
 -- PgBouncer (много соединений, но мало запросовЖ приложение_1..1000-pgbouncer-BD)
+--Front_1
