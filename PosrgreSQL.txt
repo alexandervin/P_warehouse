@@ -17,3 +17,4 @@ bild_08
 doki v dobryshino
 wik
 first work
+add_17_06
